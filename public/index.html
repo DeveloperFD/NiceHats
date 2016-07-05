@@ -1,0 +1,268 @@
+<!DOCTYPE HTML>
+<!--[if lt IE 7]><html class="no-js lt-ie9 lt-ie8 lt-ie7"><![endif]-->
+<!--[if IE 7]><html class="no-js lt-ie9 lt-ie8"><![endif]-->
+<!--[if IE 8]><html class="no-js lt-ie9"><![endif]-->
+<!--[if gt IE 8]><!--><html class="no-js"><!--<![endif]-->
+  <head>
+  	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+  	<meta name="viewport" content="width=device-width, initial-scale = 1.0, user-scalable = no">
+  	<title>Hat Shop</title>
+  	<!-- <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet"> -->
+  	<link rel="stylesheet" href="assets/css/reset.css" type="text/css" media="screen">
+  	<link rel="stylesheet" href="assets/css/grid.css" type="text/css" media="screen">
+  	<link rel="stylesheet" href="assets/css/style.css" type="text/css" media="screen">
+  </head>
+  <body>
+  	<div class="menu">
+  		<div class="container clearfix">
+  			<div id="logo" class="grid_3">
+  				<img src="assets/img/logo.png">
+  			</div>
+  			<div id="nav" class="grid_9 omega">
+  				<ul class="navigation">
+  					<li id="shop-btn" class="active">Shop</li>
+            <li id="cart-btn"><a>Cart <span id="cartcount"></span></a></li>
+  				</ul>
+  			</div>
+  		</div>
+  	</div>
+
+  <br><br>
+	<! -- Open Shop -- >
+  	<div id="shop" class="clearfix">
+  		<div class="container clearfix">
+  			<div>
+  				<h1>The Best Hats on the Internet!</h1>
+  				<p>Nobody has hats like we have hats. Check out our amazing selection below.</p>
+  			</div>
+  			<div id="items">
+    			<div class="grid_4 alpha item">
+      			<img src="assets/img/red.jpg" />
+      			<h4>Red Hat <span>$5.00</span></h3>
+      			<p>Are you a Red Sox fan but don't want to pay for an offical hat? Then this one is for you!</p>
+      			<a id="add" value="5" title="red" class="button">Add to Cart</a>
+    			</div>
+    			<div class="grid_4 item">
+      			<img src="assets/img/blue.jpg" />
+      			<h4>Blue Hat <span>$6.00</span></h3>
+      			<p>Our classic blue for the Dodgers and Blue Jays fans on a budget.</p>
+      			<a id="add-2" value="6" title="blue" class="button">Add to Cart</a>
+    			</div>
+    			<div class="grid_4 omega item">
+      			<img src="assets/img/green.jpg" />
+      			<h4>Green Hat <span>$7.00</span></h3>
+      			<p>Show your A's pride without spending an arm and a leg!</p>
+      			<a id="add" value="7" title="green" class="button">Add to Cart</a>
+    			</div>
+  			</div>
+  		</div>
+  	</div>
+  	<! -- Close Shop -- >
+
+    <br><br><br><br><br>
+  	<! -- Open Checkout -- >
+    <div id="checkout" class="clearfix">
+      <div class="container clearfix">
+        <div>
+          <h1>Checkout</h1>
+        </div>
+
+        <form method="post" name="payment-info-form" id="checkout-form">
+          <div class="grid_6 alpha">
+          <h4 style="color: red">
+            <span id="payment-errors"></span>
+          </h4>
+          <h4 style="color: green">
+            <span id="response_msg"></span>
+          </h4>
+          <h4 style="color: blue">
+            <span id="response_note"></span>
+          </h4>
+        </div>
+          <table>
+            <div class="ccInfo" style="display: none;">
+            <tr>
+              <div style="display: none;" class="form-element">
+                  <select name="auth" id="auth" payeezy-data="auth">
+                  <option value="true">true</option>
+                  <option value="false">false</option>
+              </select>
+            </div>
+            </tr>
+            <tr>
+              <div style="display: none;" class="form-element">
+                <input type="text" name="currency" id="currency"
+                  payeezy-data="currency" value="USD" />
+              </div>
+            </tr>
+            <tr>
+              <div class="form-element">
+                  <select id="card_type" payeezy-data="card_type">
+                    <option value="visa">Visa</option>
+                    <option value="mastercard">Master Card</option>
+                    <option value="American Express">American Express</option>
+                    <option value="discover">Discover</option>
+                  </select>
+              </div>
+            </tr>
+
+            <tr>
+              <div class="form-element">
+                <input type="text" id="cardholder_name" payeezy-data="cardholder_name"
+                value="" placeholder="Full Name" />
+              </div>
+            </tr>
+            <tr>
+              <div class="form-element">
+                <input type="text" payeezy-data="cc_number"
+                value="" placeholder="Card Number" />
+              </div>
+            </tr>
+            <tr>
+              <div class="form-element">
+                <input type="text" payeezy-data="cvv_code" value="" placeholder="CVV" />
+              </div>
+            </tr>
+            <tr>
+              <div class="form-element">
+                  <select payeezy-data="exp_month">
+                    <option value="01">01</option>
+                    <option value="02">02</option>
+                    <option value="03">03</option>
+                    <option value="04">04</option>
+                    <option value="05">05</option>
+                    <option value="06">06</option>
+                    <option value="07">07</option>
+                    <option value="08">08</option>
+                    <option value="09">09</option>
+                    <option value="10">10</option>
+                    <option value="11">11</option>
+                    <option value="12" selected>12</option>
+                  </select>
+                  <select payeezy-data="exp_year">
+                    <option value="16">2016</option>
+                    <option value="17">2017</option>
+                    <option value="18">2018</option>
+                    <option value="19">2019</option>
+                    <option value="20">2020</option>
+                    <option value="21">2021</option>
+                  </select>
+                </div>
+            </tr>
+            <tr>
+            <div class="form-element">
+              <input type="text" payeezy-data="zip_postal_code"
+                value="" placeholder="Zip Code" />
+            </div>
+            </tr>
+          </table>
+        </div>
+        </form>
+        <div class="grid_12">
+          <p><a id="order" class="button">Place Order</a></p>
+        </div>
+      </div>
+    </div>
+    <! -- Close Checkout -- >
+
+	<! -- Cart Section -- >
+    <div id="cart-section" class="clearfix">
+      <div class="container clearfix">
+        <div>
+          <h1>Cart </h1>
+        </div>
+        <div id="cart-items">
+          <table>
+            <tbody>
+              <tr id="redhat">
+                <td><img src="assets/img/red.jpg" /></td>
+                <td>
+                  <h4>Red Hat</h4>
+                  <p>Quantity:
+                    <select id="redselect">
+                      <option selected>1</option>
+                      <option>2</option>
+                      <option>3</option>
+                      <option>4</option>
+                      <option>5</option>
+                      <option>6</option>
+                      <option>7</option>
+                      <option>8</option>
+                      <option>9</option>
+                      <option>10</option>
+                    </select>
+                  </p>
+                  <p><a id="remove" value="red" class="link">Remove</a>
+                </td>
+                <td id="redprice" align="right"></td>
+              </tr>
+              <tr id="bluehat">
+                <td><img src="assets/img/blue.jpg" /></td>
+                <td>
+                  <h4>Blue Hat</h4>
+                  <p>Quantity:
+                    <select id="blueselect">
+                      <option selected>1</option>
+                      <option>2</option>
+                      <option>3</option>
+                      <option>4</option>
+                      <option>5</option>
+                      <option>6</option>
+                      <option>7</option>
+                      <option>8</option>
+                      <option>9</option>
+                      <option>10</option>
+                    </select>
+                  </p>
+                  <p><a id="remove" value="blue" class="link">Remove</a>
+                </td>
+                <td id="blueprice" align="right">$12.00</td>
+              </tr>
+              <tr id="greenhat">
+                <td><img src="assets/img/green.jpg" /></td>
+                <td>
+                  <h4>Green Hat</h4>
+                  <p>Quantity:
+                    <select id="greenselect">
+                      <option selected>1</option>
+                      <option>2</option>
+                      <option>3</option>
+                      <option>4</option>
+                      <option>5</option>
+                      <option>6</option>
+                      <option>7</option>
+                      <option>8</option>
+                      <option>9</option>
+                      <option>10</option>
+                    </select>
+                  </p>
+                  <p><a id="remove" value="green" class="link">Remove</a>
+                </td>
+                <td id="greenprice" align="right">$7.00</td>
+              </tr>
+              <tr>            
+            </tbody>
+          </table>
+          <p><a class="button">Check Out</a></p>
+          <br>
+          <p><a id="continue" class="link">Continue Shopping</a></p>
+        </div>
+      </div>
+    </div>
+
+    <div id="thankyou" class="clearfix">
+    <div class="container clearfix">
+      <div>
+        <h1>Thank You!</h1>
+        <p>Your order has been placed.</p>
+        <br>
+        <p><a class="link" href="shop.html">Back to Shop</a></p>
+      </div>
+    </div>
+  </div>
+    <script src="js/jquery.js"></script>
+    <script src="js/init.js"></script>
+    <script src="js/jquery.creditCardValidator.js"></script>
+    <script src="js/payeezy_us_v5.1.js"></script>
+  </body>
+</html>
