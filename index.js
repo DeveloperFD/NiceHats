@@ -23,8 +23,7 @@ app.post('/charge',function(req,res){
 	var cardName = req.body.cardName;
 	var expDate = req.body.expDate;
 
-console.log(amount + cardType + token + cardName + expDate);
-
+	console.log(amount  + ' ' + cardType + ' ' + token + ' ' + cardName + expDate);
 	payeezy.transaction.tokenAuthorize({
         merchant_ref: "1234",
         method: "token",
@@ -36,7 +35,7 @@ console.log(amount + cardType + token + cardName + expDate);
                 type: cardType,
                 value: token,
                 cardholder_name: cardName,
-                exp_date: expDate
+                exp_date: '1030'
             }
         }
     }, function(error, response) {

@@ -49,12 +49,14 @@ function showHome() {
   $('#checkout').fadeOut();
   $('#cart-section').hide();
   $('#shop').show();
+  $('#thankyou').hide();
 }
 
 function showCart() {
   $('#shop').fadeOut();
   $('#checkout').fadeOut();
   $('#cart-section').show();
+  $('#thankyou').hide();
 
   var hats = localStorage.getItem('hats');
   for (i = 0; i < hatsArray.length; i++) {
@@ -69,6 +71,7 @@ function showCheckout() {
   $('#checkout').show();
   $('#cart-section').fadeOut();
   $('#shop').fadeOut();
+  $('#thankyou').hide();
 }
 
 function displayPrice(hat) {
@@ -104,12 +107,13 @@ function updateCartAmount() {
 
 $( "a:contains('Check Out')" ).click(function() {
   total = 0;
-  $('#cartcount').text('('+hatsArray.length+')');
 
+  $('#cartcount').text('('+hatsArray.length+')');
     console.log('checking out '+ hatsArray);
     for (i = 0; i < hatsArray.length; i++) {
       hatsArray[i].quantity = $(hatsArray[i].color).val();
       quantity = parseInt(hatsArray[i].quantity) + parseInt(quantity);
+
 
       if ($('#redprice').text() != '') {
         total = total + parseInt($('#redprice').text().replace('$',''));
@@ -197,18 +201,22 @@ $('#order').click(function() {
         $('#response_msg').html('Payeezy response - Token value:' + result);
     }
 
-    $.post("http://localhost:3000/login", {
+    var expDate = $('#exp_month').val() + $('#exp_year').val();
+    console.log('exp ' + expDate);
+
+    $.post("http://localhost:3000/charge", {
           amount: total,
           cardType: $('#card_type').val(),
           token: result,
           cardName: $('#cardholder_name').val(),
-          expDate: $(''),
+          expDate: expDate
       },
       function(data){
         if(data==='done') {
             alert("payment success");
           }
       });
+      $('#checkout').hide();
       $('#thankyou').fadeIn();
   };
 
