@@ -148,7 +148,7 @@ $('#shop-btn').click(function() {
 
 // validate card type using an external library
 $(function() {
-    $('#cardnumber').validateCreditCard(function(result) {
+    $('#cc_number').validateCreditCard(function(result) {
         cardType = result.card_type.name;
     });
 });
@@ -204,9 +204,9 @@ $('#order').click(function() {
     var expDate = $('#exp_month').val() + $('#exp_year').val();
     console.log('exp ' + expDate);
 
-    $.post("http://localhost:3000/charge", {
+    $.post("http://nicehatsdemo.herokuapp.com/charge", {
           amount: total,
-          cardType: $('#card_type').val(),
+          cardType: cardType, //$('#card_type').val(),
           token: result,
           cardName: $('#cardholder_name').val(),
           expDate: expDate
