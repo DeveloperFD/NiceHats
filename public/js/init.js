@@ -204,6 +204,8 @@ $('#order').click(function() {
     var expDate = $('#exp_month').val() + $('#exp_year').val();
     console.log('exp ' + expDate);
 
+    console.log(cardType);
+    
     $.post("http://nicehatsdemo.herokuapp.com/charge", {
           amount: total,
           cardType: cardType, //$('#card_type').val(),
