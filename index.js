@@ -3,11 +3,11 @@ var bodyParser = require("body-parser");
 var app = express();
 
 var cardName, cardCvv,cardMonth, cardYear, street, city, state, zip, amount;
-//
-// app.use(express.static('public'));
-// app.use(bodyParser.urlencoded({ extended: false }));
-// app.use(bodyParser.json());
-//
+
+app.use(express.static('public'));
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
+
 
 var apikey = 'LRKG8eV5UMIdQZJVF8Or3Nkvr8ccFIAl';
 var apisecret = 'de8bb87482a18e6db9b7a0f4de6e2a1fd6927ec48a7f171a3b26bbc18f13a77d';
@@ -53,6 +53,6 @@ app.get('/', function (req, res) {
   // performAuthorizeTransaction('capture');
 });
 
-app.listen(process.env.PORT || 8080, function(){
+app.listen(process.env.PORT || 3000, function(){
   console.log("Express server listening on port %d in %s mode", this.address().port, app.settings.env);
 });
