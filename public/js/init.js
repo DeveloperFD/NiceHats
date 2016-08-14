@@ -206,7 +206,7 @@ $('#order').click(function() {
 
     console.log(cardType);
     
-    $.post("http://nicehatsdemo.herokuapp.com/charge", {
+    $.post("http://localhost:3000/charge", {
           amount: total,
           cardType: cardType, //$('#card_type').val(),
           token: result,
